@@ -1,0 +1,19 @@
+{
+  "name": "miyuna-portfolio",
+  "version": "1.0.0",
+  "description": "My personal portfolio in React &amp; Node (MERN)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miyuna-dev/miyuna-portfolio.git"
+  },
+  "author": "Miyuna Dev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miyuna-dev/miyuna-portfolio/issues"
+  },
+  "homepage": "https://github.com/miyuna-dev/miyuna-portfolio#readme"
+}
