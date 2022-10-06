@@ -23,7 +23,7 @@ export const menuItems = [
         cname: 'icon',
        },
        {
-        title: `Contact Me`,
+        title: `Contact`,
         url: '#contact',
         cname: 'icon',
        },
