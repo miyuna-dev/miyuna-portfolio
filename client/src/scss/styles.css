@@ -197,13 +197,13 @@ li {
   display: none;
   transition: all 600ms ease;
 }
-#navbar-main #navbar #navbelt .cta .hide .icon:hover {
+#navbar-main #navbar #navbelt .cta .hide .link:hover {
   color: #9F2F95;
 }
 #navbar-main #navbar #navbelt .cta .logout {
   color: rgb(255, 255, 255);
 }
-#navbar-main #navbar #navbelt .cta .icon {
+#navbar-main #navbar #navbelt .cta .link {
   color: rgb(255, 255, 255);
   padding: 6px 12px;
   font-size: 1.1rem;
@@ -211,16 +211,23 @@ li {
   transition: all 600ms ease;
   text-transform: uppercase;
 }
-#navbar-main #navbar #navbelt .cta .icon.contact {
+#navbar-main #navbar #navbelt .cta .link.contact {
+  border-radius: 4px;
   border: 1px solid #191819;
 }
-#navbar-main #navbar #navbelt .cta .icon:hover {
+#navbar-main #navbar #navbelt .cta .link.contact:hover {
+  border-color: rgb(255, 255, 255);
+}
+#navbar-main #navbar #navbelt .cta .link:hover {
   text-decoration: none;
   color: #b858b3;
   background-color: rgba(18, 17, 19, 0.8);
   padding: 6px 12px;
   border-radius: 4px;
   transition: all 600ms ease;
+}
+#navbar-main #navbar #navbelt .cta .icon {
+  color: rgb(255, 255, 255);
 }
 @media screen and (max-width: 680px) {
   #navbar-main #navbar #navbelt .cta {
@@ -229,10 +236,10 @@ li {
   #navbar-main #navbar #navbelt .cta .hide {
     display: block;
   }
-  #navbar-main #navbar #navbelt .cta .hide .icon {
+  #navbar-main #navbar #navbelt .cta .hide .link {
     color: rgb(255, 255, 255);
   }
-  #navbar-main #navbar #navbelt .cta .icon {
+  #navbar-main #navbar #navbelt .cta .link {
     display: none;
   }
 }

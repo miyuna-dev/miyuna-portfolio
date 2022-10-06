@@ -49,51 +49,31 @@ const Navbar = () => {
             </Brand>
 
               <Div className="cta">
-                {!isLoggedIn && (
-                  <>
-                    <MyList className="hide menus">
-                      {menuItems.map((menu, index) => {
-                        const depthLevel = 0;
-                        return (
-                          <MenuItems
-                            items={menu}
-                            key={index}
-                            className={menu.cname}
-                            depthLevel={depthLevel}
-                          />
-                        );
-                      })}
-                    </MyList>
-                    <Button className="btn">
-                      <Link to="#home" className="icon">Home</Link>
-                    </Button>
-                    <Button className="btn">
-                      <Link to="#skills" className="icon">Skills</Link>
-                    </Button>
-                    <Button className="btn">
-                      <Link to="#projects" className="icon">Projects</Link>
-                    </Button>
-                    <Button className="btn">
-                      <Link to="#contact" className="icon contact">Let's connect</Link>
-                    </Button>
-                  </>
-                )}
-                {isLoggedIn && (
-                  <>
-                    <Button className="hide btn">
-                      <Link to="#home" className="icon"><Home /></Link>
-                    </Button>
-                    <Button className="hide btn">
-                      <Link to="#skills" className="icon"><List /></Link>
-                    </Button>
-                    <Button className="hide btn">
-                      <Link to="#projects" className="icon"><Grid /></Link>
-                    </Button>
-                    <Button className="btn">
-                      <Link to="/" className="icon logout" onClick={handleLogout} ><LogOut /></Link>
-                    </Button>
-                  </>
-                )}
+                  <MyList className="hide menus">
+                    {menuItems.map((menu, index) => {
+                      const depthLevel = 0;
+                      return (
+                        <MenuItems
+                          items={menu}
+                          key={index}
+                          className={menu.cname}
+                          depthLevel={depthLevel}
+                        />
+                      );
+                    })}
+                  </MyList>
+                  <Button className="btn">
+                    <Link to="#home" className="link">Home</Link>
+                  </Button>
+                  <Button className="btn">
+                    <Link to="#skills" className="link">Skills</Link>
+                  </Button>
+                  <Button className="btn">
+                    <Link to="#projects" className="link">Projects</Link>
+                  </Button>
+                  <Button className="btn">
+                    <Link to="#contact" className="link contact">Let's connect</Link>
+                  </Button>
             </Div>
           </HeroWrapper>
         </Container>

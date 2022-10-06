@@ -51,7 +51,7 @@
 				.hide {
 					display: none;
 					transition: $transition-slow;
-						.icon {
+						.link {
 						&:hover {
 							color: $primary;
 						}
@@ -61,7 +61,7 @@
 				.logout {
 					color: $light;
 				}
-				.icon {
+				.link {
 					color: $light;
 					padding: 6px 12px;
 					font-size: 1.1rem;
@@ -70,7 +70,12 @@
 					text-transform: uppercase;
 
 					&.contact {
+						border-radius: 4px;
 						border: 1px solid $dark-400;
+
+						&:hover {
+							border-color: $light;
+						}
 					}
 					
 					&:hover {
@@ -81,16 +86,20 @@
 						border-radius: 4px;
 						transition: $transition-slow;
 					}
-					
 				}
+
+				.icon {
+					color: $light;
+				}
+
 				@media screen and (max-width: 680px) {
 					.hide {
 						display: block;
-						.icon {
+						.link {
 							color: $light;
 						}
 					}
-					.icon {
+					.link {
 						display: none;
 					}
 					padding: 0;
