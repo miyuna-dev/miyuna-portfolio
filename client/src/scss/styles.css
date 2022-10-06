@@ -178,6 +178,7 @@ li {
   font-size: 1.6rem;
   padding-left: 1rem;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 #navbar-main #navbar #navbelt .cta {
   display: flex;
