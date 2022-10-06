@@ -74,7 +74,7 @@ const Navbar = () => {
                       <Link to="#projects" className="icon">Projects</Link>
                     </Button>
                     <Button className="btn">
-                      <Link to="#contacts" className="icon contact">Let's connect</Link>
+                      <Link to="#contact" className="icon contact">Let's connect</Link>
                     </Button>
                   </>
                 )}
