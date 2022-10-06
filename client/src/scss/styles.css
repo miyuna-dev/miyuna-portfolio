@@ -201,9 +201,6 @@ li {
 #navbar-main #navbar #navbelt .cta .hide .link:hover {
   color: #9F2F95;
 }
-#navbar-main #navbar #navbelt .cta .logout {
-  color: rgb(255, 255, 255);
-}
 #navbar-main #navbar #navbelt .cta .link {
   color: rgb(255, 255, 255);
   padding: 6px 12px;
@@ -231,8 +228,8 @@ li {
   color: rgb(255, 255, 255);
 }
 @media screen and (max-width: 680px) {
-  #navbar-main #navbar #navbelt .cta {
-    padding: 0;
+  #navbar-main #navbar #navbelt .cta .btn {
+    display: none;
   }
   #navbar-main #navbar #navbelt .cta .hide {
     display: block;
@@ -240,8 +237,9 @@ li {
   #navbar-main #navbar #navbelt .cta .hide .link {
     color: rgb(255, 255, 255);
   }
-  #navbar-main #navbar #navbelt .cta .link {
-    display: none;
+  #navbar-main #navbar #navbelt .cta .logout {
+    color: rgb(255, 255, 255);
+    padding: 0 2rem 0 1rem;
   }
 }
 @media screen and (max-width: 500px) {
@@ -278,10 +276,12 @@ li {
   background-color: #b858b3;
 }
 .menus .menu-items a[href="/#home"] {
+  padding-top: 0.8rem;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 }
 .menus .menu-items a[href="/#contact"] {
+  padding-bottom: 0.8rem;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 }
@@ -294,10 +294,7 @@ li {
   background-color: transparent;
   cursor: pointer;
   width: 100%;
-  padding: 0.7rem 1rem;
-}
-.menus .menu-items button span {
-  margin-left: 3px;
+  padding: 0.7rem 1.8rem;
 }
 .menus .menu-items .arrow::after {
   content: "";

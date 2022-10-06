@@ -74,6 +74,13 @@ const Navbar = () => {
                   <Button className="btn">
                     <Link to="#contact" className="link contact">Let's connect</Link>
                   </Button>
+                  {isLoggedIn && (
+                  <>
+                    <Button className="btn-logout">
+                      <Link to="/" className="icon logout" onClick={handleLogout} ><LogOut /></Link>
+                    </Button>
+                  </>
+                )}
             </Div>
           </HeroWrapper>
         </Container>

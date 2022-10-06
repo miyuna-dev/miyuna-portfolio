@@ -14,7 +14,7 @@
     color: $light;
     padding: 0.7rem 0.7rem;
     text-align: left;
-   text-decoration: none;
+    text-decoration: none;
 
     &:hover {
      background-color: #b858b3;
@@ -22,11 +22,13 @@
   }
   
   a[href="/#home"] {
+    padding-top: 0.8rem;
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
   }
 
   a[href="/#contact"] {
+    padding-bottom: 0.8rem;
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
   }
@@ -41,12 +43,8 @@
     background-color: transparent;
     cursor: pointer;
     width: 100%;
-    padding: 0.7rem 1rem;
-
-    span {
-      margin-left: 3px;
-      }
-    }
+    padding: 0.7rem 1.8rem;
+  }
  
  .arrow::after {
    content: "";

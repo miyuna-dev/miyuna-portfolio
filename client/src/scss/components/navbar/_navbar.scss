@@ -59,9 +59,6 @@
 					}
 				}
 
-				.logout {
-					color: $light;
-				}
 				.link {
 					color: $light;
 					padding: 6px 12px;
@@ -94,16 +91,19 @@
 				}
 
 				@media screen and (max-width: 680px) {
+					.btn {
+						display: none;
+					}
 					.hide {
 						display: block;
 						.link {
 							color: $light;
 						}
 					}
-					.link {
-						display: none;
+					.logout {
+						color: $light;
+						padding: 0 2rem 0 1rem;
 					}
-					padding: 0;
 				}
 				@media screen and (max-width: 500px) {
 					gap: 0.7rem;
