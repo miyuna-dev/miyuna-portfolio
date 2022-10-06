@@ -1,0 +1,35 @@
+/*======== FAMILY FONTS ========*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800&display=swap');
+
+:root {
+   /*====== TOASTIFY ======*/
+   --toastify-color-error: #f3b1c7 !important;
+   --toastify-color-progress-light: linear-gradient(
+     to right,
+     #4cd964,
+     #5ac8fa,
+     #007aff,
+     #34aadc,
+     #5856d6,
+     #f3b1c7
+   );
+ }
+
+/********* VARIABLES *********/
+$light: rgb(255, 255, 255);
+$light-gray: rgb(148, 148, 148);
+$gray: rgb(94, 94, 94);
+$dark-200: #121113;
+$dark-400: #191819;
+$dark: rgb(0, 0, 0);
+$primary: #9F2F95;
+$accent: #91378A;
+$purple: #96318d;
+$light-purple: #c464bc;
+$lighter-purple: #b858b3;
+$light-bg: rgb(238, 252, 255);
+
+$transition: all 400ms ease;
+$transition-slow: all 600ms ease;

@@ -1,0 +1,108 @@
+ /* ========== NAVBAR ========== */ 
+ #navbar-main {
+	display: flex;
+	box-sizing: border-box;
+	background-color: $primary;
+	#navbar {
+		display: flex;
+		flex: 1 1 auto;
+		z-index: 198;
+		font-size: 16px;
+		line-height: 1em;
+		display: block;
+		zoom: 1;
+		#navbelt {
+			align-items: center;
+			display: flex;
+			height: 70px;
+			background: linear-gradient(90deg, rgba(25,24,25,1) 0%, rgba(150,49,141,1) 20%, rgba(150,49,141,1) 80%, rgba(25,24,25,1) 100%);
+			justify-content: space-between;
+			margin: 0 auto;
+			padding: 0 2rem;
+			position: fixed;
+			top: 0;
+			z-index: 9999;
+			width: 100%;
+			color: $light;
+			.brand {
+				#logo {
+					color: $light;
+					text-shadow: 0 1px $light-purple;
+					font-size: 1.6rem;
+					padding-left: 1rem;
+					text-transform: uppercase;
+				}
+			}
+			.cta {
+            display: flex;
+				flex-direction: row;
+				align-items: center;
+            padding: 0 1rem;
+            gap: 1rem;
+				transition: $transition-slow;
+
+				.menu {
+					display: flex;
+					flex-direction: row;
+					gap: 1rem;
+					transition: $transition-slow;
+				}
+				
+				.hide {
+					display: none;
+					transition: $transition-slow;
+						.icon {
+						&:hover {
+							color: $primary;
+						}
+					}
+				}
+
+				.logout {
+					color: $light;
+				}
+				.icon {
+					color: $light;
+					padding: 6px 12px;
+					font-size: 1.1rem;
+					font-weight: 500;
+					transition: $transition-slow;
+					text-transform: uppercase;
+
+					&.contact {
+						border: 1px solid $dark-400;
+					}
+					
+					&:hover {
+						text-decoration: none;
+						color: $lighter-purple;
+						background-color: rgb($dark-200, 0.8);
+						padding: 6px 12px;
+						border-radius: 4px;
+						transition: $transition-slow;
+					}
+					
+				}
+				@media screen and (max-width: 680px) {
+					.hide {
+						display: block;
+						.icon {
+							color: $light;
+						}
+					}
+					.icon {
+						display: none;
+					}
+					padding: 0;
+				}
+				@media screen and (max-width: 500px) {
+					gap: 0.7rem;
+					padding: 0;
+				}
+			}
+			@media screen and (max-width: 680px) {
+				padding: 0 0 0 2rem;
+			}
+		}
+	}
+}
