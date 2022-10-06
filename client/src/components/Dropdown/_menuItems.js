@@ -10,7 +10,7 @@ export const menuItems = [
        {
          title: 'Home',
          url: '#home',
-         cname: 'icon',
+         cname: 'icon one',
        },
        {
         title: 'Skills',
@@ -20,6 +20,11 @@ export const menuItems = [
        {
         title: 'Projects',
         url: '#projects',
+        cname: 'icon',
+       },
+       {
+        title: `Contact Me`,
+        url: '#contact',
         cname: 'icon',
        },
      ],
