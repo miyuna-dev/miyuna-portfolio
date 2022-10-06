@@ -1,37 +1,50 @@
  /* ========== NAVBAR ========== */ 
  #navbar-main {
-	display: flex;
-	box-sizing: border-box;
-	background-color: $primary;
+	 height: 70px;
+	 box-sizing: border-box;
+	 display: flex;
+	 position: fixed;
+	 top: 0;
+	 z-index: 9999;
+	 width: 100%;
+	 color: $light;
+	 
+	 &.scrolled {
+		background-color: #121212;
+	}
+
 	#navbar {
-		display: flex;
 		flex: 1 1 auto;
 		z-index: 198;
 		font-size: 16px;
 		line-height: 1em;
 		display: block;
 		zoom: 1;
+
 		#navbelt {
 			align-items: center;
 			display: flex;
-			height: 70px;
-			background: linear-gradient(90deg, rgba(25,24,25,1) 0%, rgba(150,49,141,1) 20%, rgba(150,49,141,1) 80%, rgba(25,24,25,1) 100%);
 			justify-content: space-between;
 			margin: 0 auto;
 			padding: 0 2rem;
-			position: fixed;
-			top: 0;
-			z-index: 9999;
-			width: 100%;
-			color: $light;
+
 			.brand {
 				#logo {
 					color: $light;
-					text-shadow: 0 1px $light-purple;
+					text-shadow: 1px 1px $light-pink;
 					font-size: 1.6rem;
-					padding-left: 1rem;
 					text-transform: uppercase;
 					letter-spacing: 1px;
+
+					img {
+						width: 70px;
+						background-color: transparent;
+					}
+
+					&:hover, 
+					&:active {
+						transform: translateX(-4px);
+					}
 				}
 			}
 			.cta {
@@ -66,23 +79,28 @@
 					font-weight: 500;
 					transition: $transition-slow;
 					text-transform: uppercase;
-
-					&.contact {
-						border-radius: 4px;
-						border: 1px solid $dark-400;
-
-						&:hover {
-							border-color: $light;
-						}
-					}
 					
 					&:hover {
 						text-decoration: none;
-						color: $lighter-purple;
-						background-color: rgb($dark-200, 0.8);
+						color: $pastel-pink;
+						background-color: #222122;
 						padding: 6px 12px;
 						border-radius: 4px;
 						transition: $transition-slow;
+					}
+
+					&:active {
+						opacity: 1;
+					}
+
+					&.contact {
+						border-radius: 4px;
+						border: 1px solid $pastel-pink;
+
+						&:hover {
+							border-color: $light;
+							background-color: transparent;
+						}
 					}
 				}
 

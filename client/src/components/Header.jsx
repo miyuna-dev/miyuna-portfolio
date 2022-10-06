@@ -4,7 +4,7 @@ import React from 'react'
 const Header = () => {
   return (
     <div className="header container">
-      <div className="left">
+      {/* <div className="left">
          <p className="heading">
             A 
             <span> Resume </span> that stands out!
@@ -15,8 +15,7 @@ const Header = () => {
          </p> 
       </div>
       <div className="right">
-         <img src={""} alt="Resume" />
-      </div>
+      </div> */}
     </div>
   )  
 }
