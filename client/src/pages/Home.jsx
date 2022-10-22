@@ -7,8 +7,6 @@ const Home = () => {
    return (
       <>
          <Header />
-         <Main className="body container">
-         </Main>
       </> 
    )  
 }

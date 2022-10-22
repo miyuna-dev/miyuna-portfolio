@@ -5,7 +5,7 @@ import AuthService from "./Axios/auth.service"
 import { menuItems } from "./Dropdown/_menuItems";
 import MenuItems from './Dropdown/MenuItems';
 import { LogOut } from "react-feather";
-import Logo from "../assets/sakura-1.1s-200px.svg";
+import Logo from "../assets/img/sakura-1.1s-200px.svg";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -58,6 +58,10 @@ const Navbar = () => {
     setActiveLink(value);
   };
 
+  const disableRightClick = (e) => {
+    e.preventDefault();
+  }
+
   return (
     <>
       <NavBar id="navbar-main" className={scrolled ? "scrolled" : ""}>
@@ -65,11 +69,11 @@ const Navbar = () => {
           <HeroWrapper id="navbelt" className="wrapper d-flex">
             <Brand className="brand">
               <Link id="logo" to="/">
-                <img src={Logo} alt="logo" />
+                <img src={Logo} alt="logo" onContextMenu={disableRightClick} onDragStart={(e) => e.preventDefault()} />
               </Link>
             </Brand>
 
-              <Div className="cta">
+              <Div className="cta" onDragStart={(e) => e.preventDefault()}>
                   <MyList className="hide menus">
                     {menuItems.map((menu, index) => {
                       const depthLevel = 0;

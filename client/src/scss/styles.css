@@ -38,7 +38,8 @@ html {
 
 body {
   max-width: 100vw;
-  max-height: 100vh;
+  height: 100%;
+  width: 100%;
   line-height: 1.7;
   overflow-x: hidden;
   background-color: #121212;
@@ -147,7 +148,6 @@ li {
 
 /* ========== NAVBAR ========== */
 #navbar-main {
-  height: 70px;
   box-sizing: border-box;
   display: flex;
   position: fixed;
@@ -173,6 +173,7 @@ li {
   justify-content: space-between;
   margin: 0 auto;
   padding: 0 2rem;
+  width: 95%;
 }
 #navbar-main #navbar #navbelt .brand #logo {
   color: rgb(255, 255, 255);
@@ -180,9 +181,13 @@ li {
   font-size: 1.6rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
 #navbar-main #navbar #navbelt .brand #logo img {
-  width: 70px;
+  width: 80px;
   background-color: transparent;
 }
 #navbar-main #navbar #navbelt .brand #logo:hover, #navbar-main #navbar #navbelt .brand #logo:active {
@@ -193,7 +198,7 @@ li {
   flex-direction: row;
   align-items: center;
   padding: 0 1rem;
-  gap: 1rem;
+  gap: 1.8rem;
   transition: all 600ms ease;
 }
 #navbar-main #navbar #navbelt .cta .menu {
@@ -212,7 +217,7 @@ li {
 #navbar-main #navbar #navbelt .cta .link {
   color: rgb(255, 255, 255);
   padding: 6px 12px;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   transition: all 600ms ease;
   text-transform: uppercase;
@@ -221,7 +226,6 @@ li {
   text-decoration: none;
   color: #fcb6d1;
   background-color: #222122;
-  padding: 6px 12px;
   border-radius: 4px;
   transition: all 600ms ease;
 }
@@ -229,8 +233,12 @@ li {
   opacity: 1;
 }
 #navbar-main #navbar #navbelt .cta .link.contact {
+  padding: 6px 12px;
   border-radius: 4px;
-  border: 1px solid #fcb6d1;
+  border: 2px solid #fcb6d1;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
 #navbar-main #navbar #navbelt .cta .link.contact:hover {
   border-color: rgb(255, 255, 255);
@@ -239,7 +247,7 @@ li {
 #navbar-main #navbar #navbelt .cta .icon {
   color: rgb(255, 255, 255);
 }
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 720px) {
   #navbar-main #navbar #navbelt .cta .btn {
     display: none;
   }
@@ -265,6 +273,19 @@ li {
     padding: 0 0 0 2rem;
   }
 }
+@media screen and (max-width: 900px) {
+  #navbar-main #navbar #navbelt {
+    width: 98%;
+  }
+  #navbar-main #navbar #navbelt .cta {
+    gap: 1.1rem;
+  }
+}
+@media screen and (min-width: 1600px) {
+  #navbar-main #navbar #navbelt {
+    width: 85%;
+  }
+}
 
 .menus {
   display: flex;
@@ -285,7 +306,7 @@ li {
   text-decoration: none;
 }
 .menus .menu-items a:hover {
-  background-color: #b858b3;
+  background-color: #CB5FB3;
 }
 .menus .menu-items a[href="/#home"] {
   padding-top: 0.8rem;
@@ -341,64 +362,211 @@ li {
   top: -7px;
 }
 
-.header.container {
+.banner {
+  box-sizing: border-box;
+  align-items: center;
+  place-content: center;
+  z-index: 9999;
+  height: 100vh;
+  padding: 260px 0 100px 0;
+  background-image: url("../assets/img/banner.png");
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.banner .container {
+  display: flex;
+  width: 100%;
+  flex: 1 1 auto;
+  justify-content: space-evenly;
+  transition: all 600ms ease;
+}
+.banner .container .row {
   display: flex;
   justify-content: space-evenly;
-  text-align: center;
-  width: 100%;
-  padding: 6rem 30px 2rem 30px;
+  flex-direction: row;
+  width: 85%;
+}
+.banner .container .row .left {
+  width: 80%;
   transition: all 600ms ease;
-  height: 150vh;
-  overflow-y: auto;
+  max-width: 600px;
 }
-.header.container .left {
-  padding-top: 2.5rem;
-}
-.header.container .left .heading {
-  padding-top: 1rem;
-  margin: 0 auto;
-  max-width: 500px;
-  color: rgb(0, 0, 0);
-  font-size: 3rem;
-  font-weight: bold;
-  line-height: 4.1rem;
-  letter-spacing: 1px;
-  text-shadow: 1px 0.1rem #f78ac0;
+.banner .container .row .right {
+  display: flex;
+  place-content: end;
   transition: all 600ms ease;
 }
-.header.container .left .heading span {
-  background-clip: text;
-  background-image: linear-gradient(to right, rgba(160, 43, 101, 0.9), #f572b3);
-  color: transparent;
-  text-shadow: none;
+.banner .container .row .tagline {
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  padding: 8px 10px;
+  background: linear-gradient(90.21deg, #fca0c3 -5.91%, #f373b3 18.58%, #d868c0 71.58%, #e684d0 111.58%);
+  border-radius: 4px;
+  border: 2px solid #fcb6d1;
+  font-size: 20px;
+  margin-bottom: 1.1rem;
+  display: inline-block;
+  transition: all 600ms ease;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
-@media screen and (max-width: 986px) {
-  .header.container .left .heading {
-    max-width: 300px;
-    font-size: 2rem;
-    line-height: 2rem;
+.banner .container .row h1 {
+  color: rgb(255, 255, 255);
+  text-shadow: 1.8px 2px #f78ac0;
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1;
+  margin-bottom: 20px;
+  display: block;
+  transition: all 600ms ease;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+.banner .container .row p {
+  color: #B8B8B8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  width: 96%;
+  transition: all 600ms ease;
+}
+.banner .container .row button {
+  align-items: center;
+  padding: 0.6rem 1.2rem;
+  margin-top: 60px;
+  color: rgb(255, 255, 255);
+  background-color: #191819;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.8px;
+  border-radius: 4px;
+  border: 2px solid #fcb6d1;
+  text-transform: uppercase;
+  transition: all 600ms ease;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+.banner .container .row button:hover {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255);
+  background-color: #e98fb0;
+  border-radius: 4px;
+  transition: all 600ms ease;
+  transform: translateY(-4px);
+}
+.banner .container .row button svg {
+  font-size: 25px;
+  margin-left: 10px;
+  transition: 0.3s ease-in-out;
+  line-height: 1;
+  transition: all 600ms ease;
+}
+.banner .container .row button svg:hover {
+  margin-left: 25px;
+}
+.banner .container .row img {
+  width: 80%;
+  animation: float 4s ease-in-out infinite;
+  transition: all 600ms ease;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.banner .container .row .txt-rotate {
+  text-shadow: 1.8px 2px #CB5FB3;
+}
+.banner .container .row .txt-rotate .wrap {
+  border-right: 0.08em solid #666;
+}
+@media screen and (max-width: 1200px) {
+  .banner .container .row h1 {
+    font-size: 2.8rem;
+  }
+  .banner .container .row p {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .banner .container .row {
     gap: 2rem;
-  }
-}
-@media screen and (max-width: 680px) {
-  .header.container .left .heading {
-    max-width: 360px;
-    font-size: 1.6rem;
-    line-height: 2rem;
-  }
-}
-.header.container .right img {
-  transition: all 600ms ease;
-}
-@media screen and (min-width: 986px) {
-  .header.container .right img {
-    width: 440px;
-  }
-}
-@media screen and (max-width: 680px) {
-  .header.container {
     flex-direction: column-reverse;
-    padding-bottom: 5rem;
+  }
+  .banner .container .row .row {
+    display: flex;
+    place-content: center;
+    align-items: center;
+  }
+  .banner .container .row h1 {
+    font-size: 2.4rem;
+  }
+  .banner .container .row p {
+    font-size: 15px;
+  }
+  .banner .container .row .right {
+    display: flex;
+    place-content: end;
+  }
+  .banner .container .row .right img {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .banner .container .row {
+    gap: 3rem;
+  }
+  .banner .container .row .left {
+    align-self: center;
+    text-align: center;
+  }
+  .banner .container .row .left .tagline {
+    font-size: 18px;
+    margin-bottom: 1.4rem;
+  }
+  .banner .container .row .left h1 {
+    font-size: 2.2rem;
+  }
+  .banner .container .row .left p {
+    margin-top: 1.2rem;
+    width: 100%;
+  }
+  .banner .container .row .left button {
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+  }
+  .banner .container .row .right {
+    display: flex;
+    place-content: center;
+  }
+}
+@media screen and (max-width: 900px) {
+  .banner {
+    padding: 100px 0 100px 0;
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+@media screen and (max-width: 500px) {
+  .banner {
+    padding: 80px 0 100px 0;
   }
 }
 

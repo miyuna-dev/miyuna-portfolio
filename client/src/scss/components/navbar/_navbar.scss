@@ -1,6 +1,5 @@
  /* ========== NAVBAR ========== */ 
  #navbar-main {
-	 height: 70px;
 	 box-sizing: border-box;
 	 display: flex;
 	 position: fixed;
@@ -27,6 +26,7 @@
 			justify-content: space-between;
 			margin: 0 auto;
 			padding: 0 2rem;
+			width: 95%;
 
 			.brand {
 				#logo {
@@ -35,9 +35,13 @@
 					font-size: 1.6rem;
 					text-transform: uppercase;
 					letter-spacing: 1px;
+					user-select:none;
+					-webkit-user-drag: none;
+					-webkit-user-select: none;
+					-moz-user-select: none;
 
 					img {
-						width: 70px;
+						width: 80px;
 						background-color: transparent;
 					}
 
@@ -52,7 +56,7 @@
 				flex-direction: row;
 				align-items: center;
             padding: 0 1rem;
-            gap: 1rem;
+            gap: 1.8rem;
 				transition: $transition-slow;
 
 				.menu {
@@ -75,7 +79,7 @@
 				.link {
 					color: $light;
 					padding: 6px 12px;
-					font-size: 1.1rem;
+					font-size: 1.2rem;
 					font-weight: 500;
 					transition: $transition-slow;
 					text-transform: uppercase;
@@ -84,7 +88,6 @@
 						text-decoration: none;
 						color: $pastel-pink;
 						background-color: #222122;
-						padding: 6px 12px;
 						border-radius: 4px;
 						transition: $transition-slow;
 					}
@@ -94,8 +97,12 @@
 					}
 
 					&.contact {
+						padding: 6px 12px;
 						border-radius: 4px;
-						border: 1px solid $pastel-pink;
+						border: 2px solid $pastel-pink;
+						user-select: none;
+						-webkit-user-select: none;
+						-moz-user-select: none;
 
 						&:hover {
 							border-color: $light;
@@ -108,7 +115,7 @@
 					color: $light;
 				}
 
-				@media screen and (max-width: 680px) {
+				@media screen and (max-width: 720px) {
 					.btn {
 						display: none;
 					}
@@ -130,6 +137,15 @@
 			}
 			@media screen and (max-width: 680px) {
 				padding: 0 0 0 2rem;
+			}
+			@media screen and (max-width: 900px) {
+				width: 98%;
+				.cta {
+					gap: 1.1rem;
+				}
+			}
+			@media screen and (min-width: 1600px) {
+				width: 85%;
 			}
 		}
 	}
