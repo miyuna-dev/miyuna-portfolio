@@ -11,34 +11,9 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const anchorRef = useRef(null);
-  const token = JSON.parse(localStorage.getItem("token"));
   
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
-
-  const handleLogout = (event) => {
-    AuthService.logout()
-        .then(function (response) {
-            localStorage.removeItem("token")
-            navigate('/')
-            setIsLoggedIn(false);
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-    if (anchorRef.current && anchorRef.current.contains(event.target)) {
-        return;
-    }
-}
-
-  useEffect(() => {
-    if (token) {
-      setIsLoggedIn(true)
-    } else {
-      setIsLoggedIn(false)
-    }
-  }, [location, token]);
 
   useEffect(() => {
     const onScroll = () => {
@@ -74,42 +49,35 @@ const Navbar = () => {
             </Brand>
 
               <Div className="cta" onDragStart={(e) => e.preventDefault()}>
-                  <MyList className="hide menus">
-                    {menuItems.map((menu, index) => {
-                      const depthLevel = 0;
-                      return (
-                        <MenuItems
-                          items={menu}
-                          key={index}
-                          className={menu.cname}
-                          depthLevel={depthLevel}
-                        />
-                      );
-                    })}
-                  </MyList>
-                  <Button className="btn">
-                    <Link 
-                      to="#home" 
-                      className={`link ${activeLink === "home" ? "active navbar-link" : "navbar-link"}`}
-                      onClick={() => onUpdateActiveLink("home")}
-                    >Home</Link>
-                  </Button>
-                  <Button className="btn">
-                    <Link to="#skills" className={`link ${activeLink === "skills" ? "active navbar-link" : "navbar-link"}`}>Skills</Link>
-                  </Button>
-                  <Button className="btn">
-                    <Link to="#projects" className={`link ${activeLink === "projects" ? "active navbar-link" : "navbar-link"}`}>Projects</Link>
-                  </Button>
-                  <Button className="btn">
-                    <Link to="#contact" className="link contact" onClick={() => console.log('connect')}>Let's connect</Link>
-                  </Button>
-                  {isLoggedIn && (
-                  <>
-                    <Button className="btn-logout">
-                      <Link to="/" className="icon logout" onClick={handleLogout} ><LogOut /></Link>
-                    </Button>
-                  </>
-                )}
+                <MyList className="hide menus">
+                  {menuItems.map((menu, index) => {
+                    const depthLevel = 0;
+                    return (
+                      <MenuItems
+                        items={menu}
+                        key={index}
+                        className={menu.cname}
+                        depthLevel={depthLevel}
+                      />
+                    );
+                  })}
+                </MyList>
+                <Button className="btn">
+                  <Link 
+                    to="#home" 
+                    className={`link ${activeLink === "home" ? "active navbar-link" : "navbar-link"}`}
+                    onClick={() => onUpdateActiveLink("home")}
+                  >Home</Link>
+                </Button>
+                <Button className="btn">
+                  <Link to="#skills" className={`link ${activeLink === "skills" ? "active navbar-link" : "navbar-link"}`}>Skills</Link>
+                </Button>
+                <Button className="btn">
+                  <Link to="#projects" className={`link ${activeLink === "projects" ? "active navbar-link" : "navbar-link"}`}>Projects</Link>
+                </Button>
+                <Button className="btn">
+                  <Link to="#contact" className="link contact" onClick={() => console.log('connect')}>Let's connect</Link>
+                </Button>
             </Div>
           </HeroWrapper>
         </Container>
