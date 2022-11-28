@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import AuthService from "./Axios/auth.service"
 import { menuItems } from "./Dropdown/_menuItems";
 import MenuItems from './Dropdown/MenuItems';
-import { LogOut } from "react-feather";
 import Logo from "../assets/img/sakura-1.1s-200px.svg";
 
 const Navbar = () => {
