@@ -1,0 +1,175 @@
+#skills {
+   background-color: #050505;
+}
+
+.skills-section {
+   padding: 50px 0 50px 0;
+   width: 100%;
+   background-image: url(../assets/img/Interstellar.svg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   transition: $transition;
+
+   .container {
+
+      @media screen and (min-width: 1600px) {
+         padding: 0 200px;
+      }
+      
+      @media screen and (min-width: 900px) and (max-width: 1600px) {
+         padding: 0 100px;
+      }
+
+      @media screen and (min-width: 600px) and (max-width: 900px) {
+         padding: 0 70px;
+      }
+
+      @media screen and (max-width: 600px) {
+         padding: 0 33px;
+      }
+
+      .row {
+         .col {
+            .skill-box {
+               background: #151515;
+               border-radius: 64px;
+               text-align: center;
+               padding: 60px 50px;
+               margin-top: -50px;
+               border: 0.01rem solid rgba(255, 164, 184, 0.2);
+               box-shadow: rgba(221, 139, 173, 0.25) 0px 2px 6px -1px, rgba(77, 41, 136, 0.08) 0px 4px 10px 1.2px;
+      
+               h2 {
+                  color: $light;
+                  text-shadow: 1.8px 2px $light-pink;
+                  font-size: 2.4rem;
+                  font-weight: 700;
+                  letter-spacing: 0.8px;
+                  line-height: 1;
+                  margin-bottom: 20px;
+                  display: block;
+                  transition: $transition-slow;
+               }
+      
+               p {
+                  color: #B8B8B8;
+                  font-size: 18px;
+                  letter-spacing: 0.8px;
+                  line-height: 1.5em;
+                  margin: 14px 0 75px 0;
+               }
+      
+               .skill-items {
+
+                  .skill-slider {
+                     width: 80%;
+                     height: 18rem;
+                     margin: 0 auto;
+                     position: relative;
+
+                     padding: 0 0 40px 0;
+
+         
+                     .item {
+         
+                        h5 {
+                           color: $light;
+                           font-size: 1rem;
+                        }
+                     
+                        img {
+                           width: 50%;
+                           margin: 0 auto 15px auto;
+                           user-select: none;
+                           -webkit-user-select: none;
+                           -moz-user-select: none;
+                        }
+                     }
+
+                     .custom-left-arrow {
+                        left: calc(4% - 38px);
+                        top: 80px;
+                        background-color: transparent;
+                        
+                        &:hover {
+                           background-color: rgb(255, 164, 184, 0.9);
+                        }
+
+                        &::before {
+                           content: "\21FD";
+                           color: $light;
+                        }
+                     }
+
+                     .custom-right-arrow {
+                        right: calc(4% - 38px);
+                        top: 80px;
+                        background-color: transparent;
+
+                        &:hover {
+                           background-color: rgb(255, 164, 184, 0.9);
+                        }
+
+                        &::before {
+                           content: "\21FE";
+                           color: $light;
+                        }
+                     }
+
+                     .react-multi-carousel-dot-list {
+                        position: absolute;
+                        z-index: 9999;
+                        padding: 19px 0;
+                        bottom: calc(4% - 35px);
+                        
+                        .react-multi-carousel-dot {
+
+                           button {
+                              border-color: $light;
+                              background-color: $dark-400;
+                           }
+
+                           &--active {
+                              button {
+                              background-color: $pastel-pink;
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+               
+               @media screen and (min-width: 600px) and (max-width: 1200px) {
+                  p {
+                     font-size: 16px;
+                     margin: 14px 0 45px 0;
+                  }
+               }
+
+               @media screen and (max-width: 600px) {
+                  padding: 44px 48px;
+                  h2 {
+                     font-size: 2.2rem;
+                  }
+                  p {
+                     font-size: 15px;
+                     margin: 14px 0 45px 0;
+                  }
+               }
+
+            }
+         }
+      }
+   }
+
+   .background-image-left {
+      top:61%;
+      position: absolute;
+      bottom: 0;  
+      width: 40%;
+      z-index: -4;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+   }
+}

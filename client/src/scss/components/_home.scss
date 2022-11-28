@@ -2,10 +2,9 @@
    box-sizing: border-box;
    align-items: center;
    place-content: center;
-	 z-index: 9999;
-    height: 100vh;
-   padding: 260px 0 100px 0;
-   background-image: url('../assets/img/banner.png');
+	z-index: 9999;
+   padding: 270px 0 120px 0;
+   background-image: url('../assets/img/Twilight.svg');
    background-position: top center;
    background-size: cover;
    background-repeat: no-repeat;
@@ -21,7 +20,8 @@
          display: flex;
          justify-content: space-evenly;
          flex-direction: row;
-         width: 85%;
+         width: 90%;
+         gap: 8rem;
 
          .left {
             width: 80%;
@@ -31,7 +31,7 @@
 
          .right {
             display: flex;
-            place-content: end;
+            place-content: flex-end;
             transition: $transition-slow;
          }
 
@@ -46,9 +46,6 @@
             margin-bottom: 1.1rem;
             display: inline-block;
             transition: $transition-slow;
-            user-select: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
          }
 
          h1 {
@@ -61,9 +58,6 @@
             margin-bottom: 20px;
             display: block;
             transition: $transition-slow;
-            user-select: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
          }
 
          p {
@@ -89,9 +83,6 @@
             text-transform: uppercase;
             transition: $transition-slow;
             cursor: pointer;
-            user-select: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
 
             &:hover {
                text-decoration: none;
@@ -116,8 +107,18 @@
             }
          }
 
-         img {
-            width: 80%;
+         .rocket {
+            width: 20%;
+            align-self: self-end;
+            animation: floatReverse 4s ease-in-out infinite;
+            transition: $transition;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+         }
+
+         .astronaut {
+            width: 110%;
             animation: float 4s ease-in-out infinite;
             transition: $transition;
             user-select: none;
@@ -130,13 +131,24 @@
                transform: translateY(0px);
             }
             50% {
-               transform: translateY(-20px);
+               transform: translateY(-40px);
             }
             100% {
                transform: translateY(0px);
             }
          }
 
+         @keyframes floatReverse {
+            0% {
+               transform: translateY(0px);
+            }
+            50% {
+               transform: translateY(40px);
+            }
+            100% {
+               transform: translateY(0px);
+            }
+         }
 
          .txt-rotate {
             text-shadow: 1.8px 2px $light-purple;
@@ -172,8 +184,13 @@
 
             .right {
                display: flex;
-               place-content: end;
-               img {
+               place-content: flex-end;
+               padding: 10px 0;
+               .rocket {
+                  width: 15%;
+                  animation: float 4s ease-in-out infinite;
+               }
+               .astronaut {
                   width: 50%;
                }
             }

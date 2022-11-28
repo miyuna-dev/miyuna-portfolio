@@ -7,6 +7,7 @@
 	 z-index: 9999;
 	 width: 100%;
 	 color: $light;
+	 transition: $transition;
 	 
 	 &.scrolled {
 		background-color: #121212;
@@ -25,10 +26,10 @@
 			display: flex;
 			justify-content: space-between;
 			margin: 0 auto;
-			padding: 0 2rem;
-			width: 95%;
+			transition: $transition-slow;
 
 			.brand {
+				
 				#logo {
 					color: $light;
 					text-shadow: 1px 1px $light-pink;
@@ -39,18 +40,39 @@
 					-webkit-user-drag: none;
 					-webkit-user-select: none;
 					-moz-user-select: none;
-
+					
 					img {
 						width: 80px;
 						background-color: transparent;
+						animation: spin 12s ease-in-out infinite;
+						transition: $transition-slow;
+					}
+		
+					@keyframes spin {
+						100% {
+							transform: rotate(360deg);
+						}
 					}
 
-					&:hover, 
-					&:active {
-						transform: translateX(-4px);
+						&:hover, 
+						&:active {
+							transform: translateY(-2px);
+						}
+					}
+
+					@media screen and (max-width: 900px) {
+						padding-left: 1rem;
 					}
 				}
+	
+				@media screen and (min-width: 900px) {
+					width: 90%;
+				}
+				@media screen and (min-width: 1600px) {
+					width: 78%;
+				}
 			}
+
 			.cta {
             display: flex;
 				flex-direction: row;
@@ -69,83 +91,73 @@
 				.hide {
 					display: none;
 					transition: $transition-slow;
-						.link {
+
+					button svg {
+						width: 45px;
+						height: 35px;
+					}
+					
+					.link {
 						&:hover {
 							color: $primary;
 						}
 					}
 				}
 
-				.link {
-					color: $light;
-					padding: 6px 12px;
-					font-size: 1.2rem;
-					font-weight: 500;
+			.link {
+				color: $light;
+				padding: 6px 12px;
+				font-size: 1.2rem;
+				font-weight: 500;
+				transition: $transition-slow;
+				text-transform: uppercase;
+				
+				&:hover {
+					text-decoration: none;
+					color: $pastel-pink;
+					background-color: #222122;
+					border-radius: 4px;
 					transition: $transition-slow;
-					text-transform: uppercase;
-					
+				}
+				&:active {
+					opacity: 1;
+				}
+				&.contact {
+					padding: 6px 12px;
+					border-radius: 4px;
+					border: 2px solid $pastel-pink;
 					&:hover {
-						text-decoration: none;
-						color: $pastel-pink;
-						background-color: #222122;
-						border-radius: 4px;
-						transition: $transition-slow;
-					}
-
-					&:active {
-						opacity: 1;
-					}
-
-					&.contact {
-						padding: 6px 12px;
-						border-radius: 4px;
-						border: 2px solid $pastel-pink;
-						user-select: none;
-						-webkit-user-select: none;
-						-moz-user-select: none;
-
-						&:hover {
-							border-color: $light;
-							background-color: transparent;
-						}
+						border-color: $light;
+						background-color: transparent;
 					}
 				}
-
-				.icon {
-					color: $light;
+			}
+			.icon {
+				color: $light;
+			}
+			@media screen and (max-width: 720px) {
+				.btn {
+					display: none;
 				}
-
-				@media screen and (max-width: 720px) {
-					.btn {
-						display: none;
-					}
-					.hide {
-						display: block;
-						.link {
-							color: $light;
-						}
-					}
-					.logout {
+				.hide {
+					display: block;
+					.link {
 						color: $light;
-						padding: 0 2rem 0 1rem;
 					}
 				}
-				@media screen and (max-width: 500px) {
-					gap: 0.7rem;
-					padding: 0;
+				.logout {
+					color: $light;
+					padding: 0 2rem 0 1rem;
 				}
 			}
-			@media screen and (max-width: 680px) {
-				padding: 0 0 0 2rem;
+			@media screen and (max-width: 500px) {
+				gap: 0.7rem;
+				padding: 0;
 			}
-			@media screen and (max-width: 900px) {
-				width: 98%;
-				.cta {
-					gap: 1.1rem;
-				}
-			}
-			@media screen and (min-width: 1600px) {
-				width: 85%;
+		}
+		@media screen and (max-width: 900px) {
+			.cta {
+				gap: 1.1rem;
 			}
 		}
 	}

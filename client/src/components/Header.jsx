@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import headerImg from "../assets/img/space.svg";
+// import headerImg from "../assets/img/space.svg";
+import headerImg from "../assets/img/my-astronaut.svg";
+import rocket from "../assets/img/Rocket.svg";
 
 const Header = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -9,14 +11,6 @@ const Header = () => {
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(100 - Math.random() * 100);
   const period = 1200;
-
-  useEffect(() => {
-    let ticker = setInterval(() => {
-      tick();
-    }, delta)
-
-    return () => { clearInterval(ticker)};
-  }, [text]);
 
   const tick = () => {
     let i = loopNum % toRotate.length;
@@ -43,6 +37,15 @@ const Header = () => {
     e.preventDefault();
   }
 
+  useEffect(() => {
+    let ticker = setInterval(() => {
+      tick();
+    }, delta)
+
+    return () => { clearInterval(ticker) };
+  }, [text]);
+  
+
   return (
     <Banner id="home" className="banner" onContextMenu={disableRightClick} onDragStart={(e) => { e.preventDefault(); e.stopPropagation();}}>
       <Container className="header container">
@@ -52,13 +55,14 @@ const Header = () => {
             <h1>
               {`Hi! I'm Miyuna,`}
               <br></br>
-              <span className="txt-rotate">Web Developer</span>
+              <span className="txt-rotate">{text}</span>
             </h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto ipsa, assumenda incidunt atque velit illum aliquid sapiente odio tempore omnis ea natus libero rem amet provident doloremque reprehenderit deserunt esse? Sapiente laborum aliquam eos amet dignissimos, debitis dicta quia asperiores numquam rem soluta rerum ad id magni quod pariatur neque nisi cupiditate molestiae perferendis consectetur.</p>
             <button onClick={() => console.log("connect")}>Let's connect</button>
           </Col>
           <Col className="right">
-            <img src={headerImg} alt="Header Img" onContextMenu={disableRightClick} onDragStart={(e) => e.preventDefault()}/>
+            <img src={rocket} alt="Space ship" className="rocket"/>
+            <img src={headerImg} alt="Header Img" className="astronaut" onContextMenu={disableRightClick} onDragStart={(e) => e.preventDefault()}/>
           </Col>
         </Row>
       </Container>
