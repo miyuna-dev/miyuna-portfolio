@@ -6,9 +6,9 @@ import MenuItems from './Dropdown/MenuItems';
 import Logo from "../assets/img/sakura-1.1s-200px.svg";
 
 const Navbar = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const anchorRef = useRef(null);
+  // const navigate = useNavigate();
+  // const location = useLocation();
+  // const anchorRef = useRef(null);
   
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
